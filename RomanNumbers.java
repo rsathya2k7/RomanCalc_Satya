@@ -5,24 +5,24 @@ import java.util.Scanner;
 
 public class RomanNumbers {
 	public static String romanNumerals(int inputValue) {
-		String res = "";
+		String result = "";
 		// check the condition for less then or equal to Zero or Grater then
 		// 3000
 		if (inputValue <= 0 || inputValue > 3000) {
 			// if given input value equals to Zero then
 
 			if (inputValue == 0) {
-				res = "Zero is not Convert into Roman Numeral value";
+				result = "Zero is not Convert into Roman Numeral value";
 			}
 			// if given input value less then Zero then
 
 			else if (inputValue < 0) {
-				res = "Negative value is not Convert into Roman Numeral value";
+				result = "Negative value is not Convert into Roman Numeral value";
 			}
 			// if given input value Grater then 3000 then
 
 			else if (inputValue > 3000) {
-				res = "Please Enter the below 3000";
+				result = "Please Enter the below 3000";
 			}
 		}
 
@@ -46,11 +46,11 @@ public class RomanNumbers {
 
 			for (Map.Entry<String, Integer> entry : roman_numerals.entrySet()) {
 				int matches = inputValue / entry.getValue();
-				res += repeat(entry.getKey(), matches);
+				result += repeat(entry.getKey(), matches);
 				inputValue = inputValue % entry.getValue();
 			}
 		}
-		return res;
+		return result;
 	}
 
 	public static String repeat(String key, int Val) {
